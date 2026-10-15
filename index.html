@@ -1,0 +1,645 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>邢国斌 · 斌爷 | 从菜鸡到亿万富翁的十年</title>
+<meta name="description" content="邢国斌，人称斌爷。一个刚毕业的年轻人，如何用十年时间，把自己活成一座商业帝国的名字。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#04060c;
+  --ink2:#080c18;
+  --panel:rgba(255,255,255,.035);
+  --gold:#f2c96a;
+  --gold-l:#ffeab4;
+  --gold-d:#a9741d;
+  --text:#eaedf6;
+  --muted:#98a3bd;
+  --line:rgba(242,201,106,.22);
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong",SimSun,"Times New Roman",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--text);font-family:var(--sans);
+  line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:rgba(242,201,106,.85);color:#1a1200}
+img{max-width:100%}
+
+/* ---------- 背景 ---------- */
+.aurora{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;
+  background:
+    radial-gradient(1200px 720px at 50% -12%,rgba(242,201,106,.13),transparent 62%),
+    radial-gradient(900px 620px at 100% 104%,rgba(56,88,200,.14),transparent 66%),
+    radial-gradient(700px 500px at 0% 60%,rgba(242,201,106,.06),transparent 70%),
+    var(--ink);
+}
+.aurora span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;mix-blend-mode:screen}
+.aurora span:nth-child(1){width:52vw;height:52vw;left:-12vw;top:-10vw;background:radial-gradient(circle,rgba(242,201,106,.55),transparent 65%);animation:drift1 28s ease-in-out infinite alternate}
+.aurora span:nth-child(2){width:46vw;height:46vw;right:-10vw;top:34vh;background:radial-gradient(circle,rgba(70,110,230,.5),transparent 65%);animation:drift2 34s ease-in-out infinite alternate}
+.aurora span:nth-child(3){width:40vw;height:40vw;left:28vw;bottom:-16vw;background:radial-gradient(circle,rgba(212,150,60,.42),transparent 66%);animation:drift1 40s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate3d(8vw,6vh,0) scale(1.18)}}
+@keyframes drift2{to{transform:translate3d(-9vw,-7vh,0) scale(1.12)}}
+
+.grid-overlay{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:68px 68px;
+  -webkit-mask-image:radial-gradient(circle at 50% 26%,#000 18%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 26%,#000 18%,transparent 78%);
+}
+
+/* ---------- 导航 ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:15px clamp(16px,4vw,58px);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  background:linear-gradient(180deg,rgba(4,6,12,.9),rgba(4,6,12,.32));
+  border-bottom:1px solid rgba(242,201,106,.14);
+}
+.brand{font-family:var(--serif);font-weight:700;font-size:14px;letter-spacing:.3em;color:var(--gold-l);white-space:nowrap}
+.brand em{font-style:normal;color:rgba(152,163,189,.75);letter-spacing:.16em;font-size:11.5px;margin-left:8px}
+.nav-links{display:flex;gap:clamp(14px,2.4vw,32px);font-size:13px;letter-spacing:.18em}
+.nav-links a{color:var(--muted);text-decoration:none;position:relative;padding-bottom:3px;transition:color .35s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .4s}
+.nav-links a:hover{color:var(--gold-l)}
+.nav-links a:hover::after{width:100%}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  display:grid;grid-template-columns:1.12fr .88fr;
+  gap:clamp(28px,5vw,74px);align-items:center;
+  padding:clamp(124px,17vh,186px) clamp(20px,6vw,92px) clamp(64px,11vh,120px);
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:180px;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(4,6,12,.85));
+}
+.eyebrow{
+  font-size:11.5px;letter-spacing:.44em;color:var(--gold);opacity:.9;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:700;line-height:.98;
+  font-size:clamp(46px,8.6vw,126px);letter-spacing:.05em;
+  background:linear-gradient(180deg,#fff9ec 6%,var(--gold) 46%,var(--gold-d) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 14px 46px rgba(242,201,106,.28));
+}
+.alias{
+  font-family:var(--serif);font-size:clamp(20px,3vw,34px);
+  letter-spacing:.34em;color:var(--gold);margin-top:16px;
+}
+.alias s{text-decoration:none;color:rgba(152,163,189,.6);font-size:.62em;letter-spacing:.2em}
+.lead{
+  margin-top:26px;max-width:640px;color:#c6cee2;
+  font-size:clamp(14.5px,1.55vw,17px);line-height:2.05;
+}
+.lead b{color:var(--gold-l);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 32px;
+  border-radius:999px;text-decoration:none;font-size:13px;letter-spacing:.26em;
+  color:var(--gold-l);border:1px solid rgba(242,201,106,.5);
+  background:rgba(242,201,106,.045);transition:.42s cubic-bezier(.2,.7,.2,1);
+}
+.btn:hover{background:var(--gold);color:#1a1200;transform:translateY(-3px);box-shadow:0 16px 44px rgba(242,201,106,.34)}
+.btn.ghost{border-color:rgba(255,255,255,.2);color:var(--text)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);color:#fff;box-shadow:none}
+.hero-meta{display:flex;flex-wrap:wrap;gap:clamp(20px,3.6vw,52px);margin-top:clamp(38px,5vw,64px)}
+.hero-meta .mi b{
+  display:block;font-family:var(--serif);font-size:clamp(24px,2.8vw,34px);line-height:1.2;
+  background:linear-gradient(180deg,#fff6e0,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-meta .mi span{display:block;margin-top:4px;font-size:11.5px;letter-spacing:.28em;color:var(--muted)}
+
+.portrait-frame{position:relative}
+.portrait-frame::before{
+  content:"";position:absolute;inset:-18px;border-radius:34px;z-index:0;
+  background:conic-gradient(from 0deg,transparent 0deg,rgba(242,201,106,.6) 70deg,transparent 150deg,transparent 360deg);
+  filter:blur(16px);opacity:.62;animation:spin 16s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.portrait{
+  position:relative;z-index:1;aspect-ratio:4/5;border-radius:24px;overflow:hidden;
+  border:1px solid rgba(242,201,106,.34);background:#0a0e1a;
+  box-shadow:0 40px 110px rgba(0,0,0,.72),0 0 0 12px rgba(242,201,106,.045),inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:46% 26%;display:block;filter:saturate(1.06) contrast(1.05)}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(4,6,12,.86))}
+.portrait .cap{
+  position:absolute;left:20px;right:20px;bottom:18px;z-index:2;
+  font-family:var(--serif);font-size:13px;letter-spacing:.26em;color:rgba(255,238,196,.9);
+}
+
+/* ---------- 跑马灯 ---------- */
+.ribbon{
+  position:relative;z-index:2;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(242,201,106,.07),rgba(242,201,106,.012),rgba(242,201,106,.07));
+}
+.ribbon-track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.ribbon-track span{
+  display:block;white-space:nowrap;padding:17px 0;
+  font-family:var(--serif);font-size:clamp(12.5px,1.5vw,17px);letter-spacing:.42em;
+  color:rgba(242,201,106,.74);
+}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- 通用区块 ---------- */
+section{position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(74px,10vw,142px) clamp(20px,5vw,40px)}
+.sec-head{text-align:center;max-width:760px;margin:0 auto clamp(46px,6.4vw,84px)}
+.kicker{font-size:11.5px;letter-spacing:.5em;color:var(--gold);opacity:.86;text-transform:uppercase}
+.sec-head h2{
+  font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);letter-spacing:.1em;
+  margin:16px 0 16px;color:#fff;
+}
+.sec-head p{color:var(--muted);font-size:clamp(14px,1.5vw,16px)}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px auto 0}
+.orn i{display:block;width:min(20vw,120px);height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.orn u{width:7px;height:7px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 16px rgba(242,201,106,.8)}
+
+/* ---------- 开篇语 ---------- */
+.intro{text-align:center}
+.big-quote{
+  font-family:var(--serif);font-size:clamp(22px,3.6vw,44px);line-height:1.75;letter-spacing:.06em;
+  color:#fff;max-width:920px;margin:0 auto;
+  background:linear-gradient(180deg,#fffdf7,rgba(242,201,106,.86));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.big-sub{margin-top:22px;font-size:12px;letter-spacing:.42em;color:var(--gold);opacity:.8}
+
+/* ---------- 编年史 ---------- */
+.timeline{position:relative;display:grid;gap:clamp(52px,7.4vw,100px)}
+.timeline::before{
+  content:"";position:absolute;left:50%;top:-20px;bottom:-20px;width:1px;transform:translateX(-50%);
+  background:linear-gradient(180deg,transparent,var(--line) 9%,var(--line) 91%,transparent);
+}
+.chapter{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4.6vw,66px);align-items:center}
+.chapter::before{
+  content:"";position:absolute;left:50%;top:50%;width:13px;height:13px;z-index:3;
+  transform:translate(-50%,-50%) rotate(45deg);
+  background:var(--ink);border:1px solid var(--gold);
+  box-shadow:0 0 24px rgba(242,201,106,.65);
+}
+.chapter:nth-child(even) .text{order:2}
+.chapter:nth-child(even) .media{order:1}
+
+.card{
+  position:relative;overflow:hidden;border-radius:18px;
+  padding:clamp(24px,3.2vw,42px);
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+  border:1px solid rgba(255,255,255,.075);border-left:2px solid rgba(242,201,106,.55);
+  box-shadow:0 26px 64px rgba(0,0,0,.52);
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),border-color .55s,box-shadow .55s;
+}
+.card:hover{transform:translateY(-7px);border-color:rgba(242,201,106,.42);box-shadow:0 36px 84px rgba(0,0,0,.62)}
+.card .idx{
+  position:absolute;top:10px;right:20px;font-family:var(--serif);font-size:clamp(52px,7vw,88px);
+  line-height:1;color:rgba(242,201,106,.085);pointer-events:none;
+}
+.year{
+  display:flex;align-items:baseline;gap:14px;font-family:var(--serif);
+  font-size:clamp(30px,3.9vw,46px);letter-spacing:.05em;color:rgba(242,201,106,.95);
+}
+.year small{font-family:var(--sans);font-size:11.5px;letter-spacing:.4em;color:var(--muted)}
+.card h3{
+  font-family:var(--serif);font-size:clamp(19px,2.3vw,27px);letter-spacing:.14em;
+  margin:14px 0 14px;color:#fff;
+}
+.card p{color:#c2cbe0;font-size:clamp(14px,1.5vw,15.6px);line-height:2.05}
+.card p + p{margin-top:14px}
+.card p b{color:var(--gold-l);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.tags span{
+  font-size:11.5px;letter-spacing:.14em;padding:5px 13px;border-radius:999px;
+  color:rgba(242,201,106,.9);border:1px solid var(--line);background:rgba(242,201,106,.055);
+}
+
+.figure{
+  position:relative;overflow:hidden;border-radius:18px;background:#0a0e1a;
+  border:1px solid rgba(242,201,106,.24);box-shadow:0 32px 76px rgba(0,0,0,.62);
+}
+.figure img{
+  display:block;width:100%;height:clamp(300px,42vw,470px);object-fit:cover;
+  filter:saturate(1.05) contrast(1.04);
+  transition:transform 1.3s cubic-bezier(.2,.7,.2,1);
+}
+.figure:hover img{transform:scale(1.055)}
+.figure figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:18px 20px;
+  font-size:12px;letter-spacing:.22em;color:rgba(255,255,255,.86);
+  background:linear-gradient(0deg,rgba(4,6,12,.94),rgba(4,6,12,.25),transparent);
+}
+
+/* ---------- 战绩 ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  box-shadow:0 34px 90px rgba(0,0,0,.55);
+}
+.stat{
+  background:linear-gradient(180deg,rgba(9,13,26,.94),rgba(4,6,12,.94));
+  padding:clamp(28px,4vw,46px) 22px;text-align:center;transition:background .45s;
+}
+.stat:hover{background:linear-gradient(180deg,rgba(242,201,106,.1),rgba(4,6,12,.95))}
+.stat .num{
+  font-family:var(--serif);font-size:clamp(27px,4.2vw,48px);line-height:1.1;letter-spacing:.01em;
+  background:linear-gradient(180deg,#fff7e4,var(--gold) 55%,var(--gold-d));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat .lbl{margin-top:12px;font-size:12px;letter-spacing:.26em;color:var(--muted)}
+.stat .sub{margin-top:6px;font-size:11px;letter-spacing:.14em;color:rgba(152,163,189,.6)}
+
+/* ---------- 语录 ---------- */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px}
+.quote{
+  position:relative;overflow:hidden;border-radius:18px;padding:clamp(28px,3.4vw,40px) clamp(24px,3vw,34px);
+  background:var(--panel);border:1px solid rgba(255,255,255,.075);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s,background .5s;
+}
+.quote:hover{transform:translateY(-6px);border-color:rgba(242,201,106,.4);background:linear-gradient(180deg,rgba(242,201,106,.075),rgba(255,255,255,.012))}
+.quote::before{
+  content:"\201C";position:absolute;top:-6px;right:18px;font-family:var(--serif);
+  font-size:104px;line-height:1;color:rgba(242,201,106,.13);pointer-events:none;
+}
+.quote p{font-family:var(--serif);font-size:clamp(16px,1.85vw,20px);line-height:1.95;color:#f3f6ff;position:relative}
+.quote cite{display:block;margin-top:18px;font-style:normal;font-size:11.5px;letter-spacing:.32em;color:var(--gold);opacity:.85}
+
+/* ---------- 军规 ---------- */
+.creed{display:grid;gap:14px}
+.rule{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3.2vw,40px);align-items:start;
+  padding:clamp(20px,3vw,32px);border-radius:16px;
+  background:linear-gradient(90deg,rgba(242,201,106,.065),rgba(255,255,255,0));
+  border:1px solid rgba(255,255,255,.06);border-left:1px solid rgba(242,201,106,.35);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),background .5s;
+}
+.rule:hover{transform:translateX(9px);background:linear-gradient(90deg,rgba(242,201,106,.14),rgba(255,255,255,.015))}
+.rule .no{font-family:var(--serif);font-size:clamp(26px,3.4vw,42px);line-height:1;color:rgba(242,201,106,.52)}
+.rule h3{font-family:var(--serif);font-size:clamp(18px,2.3vw,26px);letter-spacing:.18em;color:#fff;margin-bottom:8px}
+.rule p{color:var(--muted);font-size:clamp(13.5px,1.45vw,15.4px)}
+
+/* ---------- 页脚 ---------- */
+footer{
+  border-top:1px solid var(--line);text-align:center;
+  padding:clamp(56px,8vw,104px) 20px clamp(40px,5vw,64px);
+  background:linear-gradient(180deg,transparent,rgba(242,201,106,.06));
+}
+.sign{
+  font-family:var(--serif);font-size:clamp(34px,6vw,72px);letter-spacing:.32em;line-height:1.2;
+  background:linear-gradient(180deg,#fff8ea,var(--gold) 50%,var(--gold-d));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 12px 40px rgba(242,201,106,.24));
+}
+.sign-en{margin-top:14px;font-size:11.5px;letter-spacing:.5em;color:var(--muted)}
+.epitaph{
+  max-width:640px;margin:clamp(28px,4vw,44px) auto 0;color:#b9c2d8;
+  font-family:var(--serif);font-size:clamp(14px,1.6vw,17px);line-height:2.1;
+}
+.foot-line{
+  margin-top:clamp(30px,4vw,48px);padding-top:22px;border-top:1px solid rgba(255,255,255,.06);
+  font-size:11.5px;letter-spacing:.2em;color:rgba(152,163,189,.62);line-height:2.2;
+}
+
+/* ---------- 动画 ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.reveal{animation:rise .95s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}
+.d4{animation-delay:.44s}.d5{animation-delay:.58s}.d6{animation-delay:.72s}.d7{animation-delay:.86s}
+@supports (animation-timeline:view()){
+  .scroll-reveal{animation:rise 1ms linear both;animation-timeline:view();animation-range:entry 8% cover 32%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal,.scroll-reveal{opacity:1 !important;transform:none !important}
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:clamp(104px,15vh,140px)}
+  .portrait-frame{width:100%;max-width:420px;margin:0 auto}
+  .lead{margin-left:auto;margin-right:auto}
+  .btns,.hero-meta{justify-content:center}
+  .timeline::before,.chapter::before{display:none}
+  .chapter{grid-template-columns:1fr}
+  .chapter:nth-child(even) .text,.chapter:nth-child(even) .media{order:0}
+  .nav-links{display:none}
+  .brand em{display:none}
+}
+@media (max-width:560px){
+  .btns .btn{width:100%;justify-content:center}
+  .card .idx{font-size:54px;top:6px;right:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="brand">邢国斌<em>XING GUOBIN</em></div>
+  <div class="nav-links">
+    <a href="#hero">序章</a>
+    <a href="#story">传奇</a>
+    <a href="#stats">战绩</a>
+    <a href="#quotes">语录</a>
+    <a href="#creed">军规</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ================= 首屏 ================= -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="eyebrow reveal d1">2016 — 2026 · 一个人的十年战争</div>
+      <h1 class="reveal d2">邢国斌</h1>
+      <div class="alias reveal d3">号 · 斌&nbsp;爷&nbsp;&nbsp;<s>the one they call BIN YE</s></div>
+      <p class="lead reveal d4">
+        他从一间六平米的出租屋出发。行李箱是二手的，衬衫是不合身的，口袋里只剩三百二十七块钱。
+        <br>十年之后，同一个名字，刻进了这座城市最贵的那几栋楼里。
+      </p>
+      <div class="btns reveal d5">
+        <a class="btn" href="#story">进入传奇</a>
+        <a class="btn ghost" href="#stats">查看战绩</a>
+      </div>
+      <div class="hero-meta reveal d6">
+        <div class="mi"><b>10</b><span>年征战</span></div>
+        <div class="mi"><b>7</b><span>家控股企业</span></div>
+        <div class="mi"><b>¥10亿+</b><span>身家净值</span></div>
+      </div>
+    </div>
+
+    <div class="portrait-frame reveal d3">
+      <div class="portrait">
+        <img src="0113223f151a501e4625182425e23642.jpg" alt="邢国斌（斌爷）近照">
+        <div class="cap">2026 · 属于他的时代</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>斌爷 · 邢国斌 · 十年饮冰 难凉热血 · 从六平米到十亿身家 · 不服 就干 · 一个人 一支队伍 一个帝国 &nbsp;&nbsp;</span>
+      <span>斌爷 · 邢国斌 · 十年饮冰 难凉热血 · 从六平米到十亿身家 · 不服 就干 · 一个人 一支队伍 一个帝国 &nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ================= 开篇语 ================= -->
+  <section class="intro">
+    <div class="wrap">
+      <p class="big-quote scroll-reveal">“所有的传奇，都是从一句不甘心开始的。”</p>
+      <p class="big-sub scroll-reveal">— 记 斌 爷 —</p>
+    </div>
+  </section>
+
+  <!-- ================= 编年史 ================= -->
+  <section id="story">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="kicker">The Chronicle</div>
+        <h2>斌爷编年史</h2>
+        <p>五个章节，十年光阴。看一个刚毕业的菜鸡，如何把自己活成一个时代的名词。</p>
+        <div class="orn"><i></i><u></u><i></i></div>
+      </header>
+
+      <div class="timeline">
+
+        <!-- 第一章 -->
+        <article class="chapter">
+          <div class="text scroll-reveal">
+            <div class="card">
+              <div class="idx">01</div>
+              <div class="year">2016<small>第 一 章 · 出 关</small></div>
+              <h3>一个行李箱，一个人，一座不属于他的城市</h3>
+              <p>
+                那一年他刚毕业。宿舍的铁皮柜里，还留着上一届学长刻下的两个字：<b>人生</b>。
+                他把被子卷了卷塞进行李箱，站在校门口回头看了一眼，然后没有再回头。
+              </p>
+              <p>
+                第一个落脚点是城中村的六平米。房东说“押一付三”，他掏空了所有口袋，笑着说“行”。
+                那天晚上，他啃着泡面，在笔记本第一页写下一行字：<b>“十年之内，我要让这栋楼记住我。”</b>
+              </p>
+              <div class="tags"><span>六平米出租屋</span><span>三十七封被拒的简历</span><span>人生二字</span></div>
+            </div>
+          </div>
+          <figure class="media figure scroll-reveal">
+            <img src="148ab1e2c1dd43f01a03696735d8078e.jpg" alt="毕业那年的邢国斌">
+            <figcaption>2016 · 六平米的起点</figcaption>
+          </figure>
+        </article>
+
+        <!-- 第二章 -->
+        <article class="chapter">
+          <div class="text scroll-reveal">
+            <div class="card">
+              <div class="idx">02</div>
+              <div class="year">2018<small>第 二 章 · 破 局</small></div>
+              <h3>别人午休的草坪上，他改完了第四十一版方案</h3>
+              <p>
+                两年时间，他从实习生做到业务负责人，靠的只有一件事：<b>别人下班，他上班。</b>
+                凌晨三点的办公室，灯只亮着一盏，那是他的工位。
+              </p>
+              <p>
+                那笔改变命运的单子，谈了整整十一次。前九次他被拒之门外，第十次对方说“再想想”，第十一次，
+                对方把合同推过来说：<b>“就冲你这股劲儿，我信你。”</b>那一天，他账户上第一次出现了七位数。
+              </p>
+              <div class="tags"><span>第 91 个通宵</span><span>第一桶金</span><span>十一次拜访</span></div>
+            </div>
+          </div>
+          <figure class="media figure scroll-reveal">
+            <img src="1ae65fb88e010f86c3001b649d14b706.jpg" alt="草坪上工作的邢国斌">
+            <figcaption>2018 · 草坪上的第四十一版方案</figcaption>
+          </figure>
+        </article>
+
+        <!-- 第三章 -->
+        <article class="chapter">
+          <div class="text scroll-reveal">
+            <div class="card">
+              <div class="idx">03</div>
+              <div class="year">2020<small>第 三 章 · 登 高</small></div>
+              <h3>一千八百级台阶，一阶一阶自己走上去</h3>
+              <p>
+                那一年他注册了自己的第一家公司。没有办公室，就把咖啡厅当会议室；
+                没有团队，就把自己拆成三个人用——商务是他，技术是他，扫地也是他。
+              </p>
+              <p>
+                同行都说风口过去了，他偏要在没有风的地方起飞。三年后，这条赛道上排名前三的公司，
+                有两家挂着他的名字。<b>山不过来，他就把山搬回家。</b>
+              </p>
+              <div class="tags"><span>第一家公司</span><span>行业前三</span><span>逆风起飞</span></div>
+            </div>
+          </div>
+          <figure class="media figure scroll-reveal">
+            <img src="297bf5150501193423f0f45c2c77d823.jpg" alt="山路上的邢国斌">
+            <figcaption>2020 · 云梯之上</figcaption>
+          </figure>
+        </article>
+
+        <!-- 第四章 -->
+        <article class="chapter">
+          <div class="text scroll-reveal">
+            <div class="card">
+              <div class="idx">04</div>
+              <div class="year">2023<small>第 四 章 · 绝 壁</small></div>
+              <h3>所有人都在撤退，他把最后一张牌押在了悬崖边</h3>
+              <p>
+                行业寒冬，账上现金只够撑四个月。合伙人劝他收手，团队看着他，他沉默了一整夜。
+                第二天上午，他做了一件让所有人瞠目结舌的事：<b>把全部身家，押了上去。</b>
+              </p>
+              <p>
+                三个月后，市场反转。那一仗打完，他从“创业者”变成了“庄家”。
+                有人问他怕不怕，他说：<b>“怕。但怕，也得站直了怕。”</b>
+              </p>
+              <div class="tags"><span>绝境全押</span><span>四个月的现金</span><span>一战定江山</span></div>
+            </div>
+          </div>
+          <figure class="media figure scroll-reveal">
+            <img src="ae6e792732e15fff7cfcf6311e6f2e42.jpg" alt="绝壁栈道上的邢国斌">
+            <figcaption>2023 · 绝壁之间</figcaption>
+          </figure>
+        </article>
+
+        <!-- 第五章 -->
+        <article class="chapter">
+          <div class="text scroll-reveal">
+            <div class="card">
+              <div class="idx">05</div>
+              <div class="year">2026<small>第 五 章 · 封 神</small></div>
+              <h3>如今他一顶礼帽、一副墨镜走在街上，人们叫他斌爷</h3>
+              <p>
+                他名下七家企业，横跨科技、消费与资本；他投过的年轻人，已经有人开始叫他老师。
+                而他还是那件黑 T 恤，还是一个双肩包，还是走在街上会主动给长辈让路的那个人。
+              </p>
+              <p>
+                有人问他，钱到底意味着什么。他笑了笑，说：
+                <b>“意味着当年那个啃泡面的我，终于有资格替别人撑腰了。”</b>
+              </p>
+              <div class="tags"><span>十亿身家</span><span>七家控股企业</span><span>斌爷</span></div>
+            </div>
+          </div>
+          <figure class="media figure scroll-reveal">
+            <img src="0113223f151a501e4625182425e23642.jpg" alt="如今的邢国斌">
+            <figcaption>2026 · 封神之日</figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 战绩 ================= -->
+  <section id="stats">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="kicker">The Scoreboard</div>
+        <h2>斌爷战绩</h2>
+        <p>数字不会讲故事，但它从不撒谎。</p>
+        <div class="orn"><i></i><u></u><i></i></div>
+      </header>
+      <div class="stats scroll-reveal">
+        <div class="stat"><div class="num">¥10亿+</div><div class="lbl">资产净值</div><div class="sub">从三百二十七块起步</div></div>
+        <div class="stat"><div class="num">7</div><div class="lbl">家控股企业</div><div class="sub">科技 · 消费 · 资本</div></div>
+        <div class="stat"><div class="num">12,000+</div><div class="lbl">名员工</div><div class="sub">跟着他吃饭的人</div></div>
+        <div class="stat"><div class="num">380+</div><div class="lbl">座覆盖城市</div><div class="sub">版图横跨全国</div></div>
+        <div class="stat"><div class="num">2,700+</div><div class="lbl">个通宵</div><div class="sub">灯亮到天亮的夜晚</div></div>
+        <div class="stat"><div class="num">0</div><div class="lbl">次主动认输</div><div class="sub">一次都没有</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 语录 ================= -->
+  <section id="quotes">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="kicker">Words of Bin Ye</div>
+        <h2>斌爷语录</h2>
+        <p>听过的人，都记了很多年。</p>
+        <div class="orn"><i></i><u></u><i></i></div>
+      </header>
+      <div class="quotes">
+        <blockquote class="quote scroll-reveal">
+          <p>穷不是命，是还没轮到你发牌。</p>
+          <cite>— 斌爷</cite>
+        </blockquote>
+        <blockquote class="quote scroll-reveal">
+          <p>别人看的是运气，我看的是凌晨三点的报表。</p>
+          <cite>— 斌爷</cite>
+        </blockquote>
+        <blockquote class="quote scroll-reveal">
+          <p>要么不做；要做，就做到让行业为你改规则。</p>
+          <cite>— 斌爷</cite>
+        </blockquote>
+        <blockquote class="quote scroll-reveal">
+          <p>我的起点是六平米，终点没有单位。</p>
+          <cite>— 斌爷</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 军规 ================= -->
+  <section id="creed">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="kicker">The Five Rules</div>
+        <h2>斌爷五条军规</h2>
+        <p>这套准则，被他贴在办公室墙上，也刻在每一个跟他干活的人心里。</p>
+        <div class="orn"><i></i><u></u><i></i></div>
+      </header>
+      <div class="creed">
+        <div class="rule scroll-reveal">
+          <div class="no">01</div>
+          <div><h3>不 服</h3><p>所有传奇，都始于一句“凭什么不是我”。被人看轻的那天，就是你起跑的那天。</p></div>
+        </div>
+        <div class="rule scroll-reveal">
+          <div class="no">02</div>
+          <div><h3>熬</h3><p>熬得住，世界才是你的。三十七封拒信之后，是三十八次敲门。</p></div>
+        </div>
+        <div class="rule scroll-reveal">
+          <div class="no">03</div>
+          <div><h3>押</h3><p>看清了，就全押。犹豫的人没有故事，只有账本。</p></div>
+        </div>
+        <div class="rule scroll-reveal">
+          <div class="no">04</div>
+          <div><h3>信</h3><p>答应兄弟的事，比合同更硬。生意可以亏，人不能倒。</p></div>
+        </div>
+        <div class="rule scroll-reveal">
+          <div class="no">05</div>
+          <div><h3>谦</h3><p>越大的盘子，越要低着头端。走得越远，越记得六平米的那个夜晚。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="sign">斌&nbsp;爷</div>
+  <div class="sign-en">X I N G &nbsp; G U O B I N</div>
+  <p class="epitaph">
+    他不是生来就站在山顶的人。<br>
+    他只是每一次被人推下悬崖，都自己爬了上来。<br>
+    邢国斌 —— 别人叫他斌爷。
+  </p>
+  <div class="foot-line">
+    2026 · 个人纪念页 · 纯 HTML + CSS 手写<br>
+    本页为致敬式演绎创作，情节经艺术加工。
+  </div>
+</footer>
+
+</body>
+</html>
